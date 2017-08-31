@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<form class="ui large form segment">
+	<h3 class="ui header">add a link</h3>
+	<div class="field">
+		<label for="title">title:</label>
+		<input type="text" name="title" #newtitle>
+	</div>
+	<div class="field">
+		<label for="link">link:</label>
+		<input type="text" name="link" #newlink>
+	</div>
+	<button   (click)="addArticle(newtitle,newlink)" class="ui right floated button positive">
+		submit link
+	</button>
+</form>
+<div class="ui grid posts">
+	<app-article *ngFor="let item of sortedArticles()" [article] = "item" ></app-article>
+</div>
