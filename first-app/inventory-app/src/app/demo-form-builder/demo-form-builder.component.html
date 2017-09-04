@@ -1,0 +1,18 @@
+<div class="ui raised segment">
+  <h2 class="ui header">demo form</h2>
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="ui form">
+    {{sku.value}}
+    <div class="field" [class.error]="!sku.valid&&sku.touched">
+      <label for="skuInput" class="">skuInput</label>
+      <input type="text" id="skuInput" placeholder="sku" name="sku" [formControl]="sku">
+      <div *ngIf="!sku.valid" >格式错误</div>
+      <div *ngIf="sku.hasError('required')" >必须填写</div>
+    </div>
+    <div class="field">
+      <div>{{produceName}}</div>
+      <label for="produceName">produceName</label>
+      <input type="text" required [(ngModel)]="produceName" [formControl]="myForm.get('produceName')" >
+    </div>
+    <button   type="submit" class="ui button">submit</button>
+  </form>
+</div>
