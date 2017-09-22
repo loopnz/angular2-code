@@ -1,0 +1,19 @@
+<h4>
+  default strategy
+</h4>
+<form class="ui form">
+  <div class="field">
+    <label for="">first name</label>
+    <input type="text" name="first" required [(ngModel)]="profile.first"/>  
+  </div>
+  <div class="field">
+    <label for="">last name</label>
+    <input type="text" name="last" required [(ngModel)]="profile.last"/>
+  </div>
+</form>
+<h5>
+  <em>update if either changes</em>
+</h5>
+<div>
+  {{profile.lastChanged()|date:'medium'}}
+</div>

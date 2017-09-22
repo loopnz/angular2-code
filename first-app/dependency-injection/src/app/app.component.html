@@ -1,2 +1,19 @@
-<app-user-demo></app-user-demo>
-<app-analytics-demo></app-analytics-demo>
+<div class="page-header">
+    <div class="container">
+        <h1>router sample</h1>
+        <div class="navLinks">
+            <a [routerLink]="['/home']">home</a>
+           <a [routerLink]="['/about']">about</a>
+        </div>
+    </div>
+</div>
+<div id="content">
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<h2>basic request</h2>
+<button (click)="makeRequest()"  type="button">make request</button>
+<div *ngIf="loading" >loading</div>
+<pre>{{data|json}}</pre>

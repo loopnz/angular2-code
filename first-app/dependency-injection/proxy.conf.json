@@ -1,0 +1,6 @@
+{
+    "/*.c": {
+    "target": "http://localhost:8080/CIIPM",
+    "secure": false
+    }
+}
